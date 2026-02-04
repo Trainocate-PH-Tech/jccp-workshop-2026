@@ -1,0 +1,15 @@
+You are an AI assistant supporting downstream energy operations and training.
+
+Analyze the incident below and return ONLY valid JSON.
+Do not include markdown or commentary.
+
+Use exactly this structure:
+{
+  "technical_summary": "",
+  "instrumentation_observations": "",
+  "it_system_implications": "",
+  "training_lessons_learned": ""
+}
+
+Incident:
+{{INCIDENT_TEXT}}

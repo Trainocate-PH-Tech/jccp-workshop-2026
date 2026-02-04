@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "technical_summary": {"type": "string"},
+    "instrumentation_observations": {"type": "string"},
+    "it_system_implications": {"type": "string"},
+    "training_lessons_learned": {"type": "string"}
+  },
+  "required": [
+    "technical_summary",
+    "instrumentation_observations",
+    "it_system_implications",
+    "training_lessons_learned"
+  ]
+}

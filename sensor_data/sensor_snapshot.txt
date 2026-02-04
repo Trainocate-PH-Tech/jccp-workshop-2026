@@ -1,0 +1,8 @@
+Timestamp: 2026-02-02 14:31
+Unit: Hydroprocessing Unit A
+
+PT-204: 6.8 bar (fluctuating)
+TT-117: 210 C (stable)
+FT-088: 42.1 m3/h (stable)
+
+Control Mode: AUTO

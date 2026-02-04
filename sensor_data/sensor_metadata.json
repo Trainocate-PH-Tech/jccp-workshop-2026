@@ -1,0 +1,8 @@
+{
+  "PT-204": {
+    "type": "Pressure Transmitter",
+    "location": "Hydroprocessing Unit A",
+    "range": "0-10 bar",
+    "criticality": "High"
+  }
+}
