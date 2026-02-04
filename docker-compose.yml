@@ -6,4 +6,7 @@ services:
       - "5678:5678"
     environment:
       - N8N_BASIC_AUTH_ACTIVE=false
+      - N8N_HOST=n8n-demo.cloudbandsolutions.com
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n-demo.cloudbandsolutions.com/
       - OPENAI_API_KEY=${OPENAI_API_KEY}
