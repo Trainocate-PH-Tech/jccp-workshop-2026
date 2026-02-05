@@ -8,6 +8,14 @@ The focus is on:
 - Structured outputs
 - Governance-first AI usage
 
+## Examples
+
+- [Example 1: Incident Understanding](example1/Example1.md)
+- [Example 2: Incident Understanding with Structure](example2/Example2.md)
+- [Example 3: Data-Driven Incident Review for Engineering Managers](example3/README.md)
+- [Example 4: Tool-Assisted Downtime Extraction](example4/README.md)
+- [Example 5: Tool-Assisted Impact Scoring](example5/README.md)
+
 ## Deploy n8n on an EC2 instance (daemon)
 
 This section shows a simple, systemd-based deployment so n8n runs as a daemon on Ubuntu.
