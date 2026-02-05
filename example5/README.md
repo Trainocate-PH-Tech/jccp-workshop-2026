@@ -80,7 +80,7 @@ Add a **Code** tool to the AI Agent and name it `compute_impact_metrics`.
 
 ### Tool Parameter
 
-Add a **String** parameter named `query` and click the **+** so the AI can fill it.
+The AI Agent tool passes input as `query` automatically. You do not need to define a schema.
 
 ### Tool Code (JavaScript)
 
@@ -97,18 +97,12 @@ const equipmentTags = Array.from(new Set(tagMatches));
 // Simple impact score: downtime hours + 2x number of equipment tags
 const impactScore = (downtimeHours || 0) + equipmentTags.length * 2;
 
-return [
-  {
-    json: {
-      // AI Agent tools must return a string in `response`
-      response: JSON.stringify({
-        downtime_hours: downtimeHours,
-        equipment_tags: equipmentTags,
-        impact_score: impactScore,
-      }),
-    },
-  },
-];
+// AI Agent tools must return a single string
+return JSON.stringify({
+  downtime_hours: downtimeHours,
+  equipment_tags: equipmentTags,
+  impact_score: impactScore,
+});
 ```
 
 ## 4) Parse the AI Output (Set Node)
