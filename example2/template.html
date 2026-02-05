@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Structured Incident Report</title>
+</head>
+<body>
+
+<h1>Engineering Incident Report</h1>
+
+<h2>Technical Summary</h2>
+<p>{{ $json.parsed.technical_summary }}</p>
+
+<h2>Instrumentation Observations</h2>
+<p>{{ $json.parsed.instrumentation_observations }}</p>
+
+<h2>IT System Implications</h2>
+<p>{{ $json.parsed.it_system_implications }}</p>
+
+<h2>Training Lessons Learned</h2>
+<p>{{ $json.parsed.training_lessons_learned }}</p>
+
+<h2>Severity</h2>
+<p><strong>{{ $json.parsed.severity }}</strong></p>
+
+<h2>Recommended Next Steps</h2>
+<ul>
+  {{ $json.parsed.recommended_next_steps.map(step => `<li>${step}</li>`).join('') }}
+</ul>
+
+</body>
+</html>

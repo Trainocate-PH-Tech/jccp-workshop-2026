@@ -35,3 +35,42 @@ No injuries occurred, but production was halted for approximately 6 hours.
 ```
 
 ### Parse to HTML
+
+Add an HTML node (Generate HTML Template) with the following contents:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Incident Understanding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.5;
+      color: #1f2a44;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f7f9fb;
+      border: 1px solid #e3e7ee;
+      padding: 16px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Incident Understanding</h1>
+
+<p>AI-generated understanding for training and operational awareness.</p>
+
+<pre>{{ $json.output[0].content[0].text }}</pre>
+
+</body>
+</html>
+```

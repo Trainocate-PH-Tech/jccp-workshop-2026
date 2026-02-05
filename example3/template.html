@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Engineering Manager Incident Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #34495e;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .severity {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .severity.low { color: green; }
+    .severity.medium { color: orange; }
+    .severity.high { color: red; }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.85em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Engineering Manager Incident Report</h1>
+
+<h2>Incident Overview</h2>
+<p>{{ $json.parsed.incident_overview }}</p>
+
+<h2>Key Operational Findings</h2>
+<ul>
+  {{ $json.parsed.key_operational_findings.map(f => `<li>${f}</li>`).join('') }}
+</ul>
+
+<h2>Instrumentation Concerns</h2>
+<ul>
+  {{ $json.parsed.instrumentation_concerns.map(i => `<li>${i}</li>`).join('') }}
+</ul>
+
+<h2>Control System Behavior</h2>
+<p>{{ $json.parsed.control_system_behavior }}</p>
+
+<h2>Management Risks</h2>
+<ul>
+  {{ $json.parsed.management_risks.map(r => `<li>${r}</li>`).join('') }}
+</ul>
+
+<h2>Recommended Manager Actions</h2>
+<ul>
+  {{ $json.parsed.recommended_manager_actions.map(a => `<li>${a}</li>`).join('') }}
+</ul>
+
+<h2>Confidence Level</h2>
+<p class="severity {{ $json.parsed.confidence_level }}">
+  {{ $json.parsed.confidence_level }}
+</p>
+
+<div class="footer">
+  This report is AI-generated for decision support only.<br/>
+  Final judgment and actions remain the responsibility of engineering management.
+</div>
+
+</body>
+</html>
