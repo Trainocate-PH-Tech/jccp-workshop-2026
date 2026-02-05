@@ -85,16 +85,23 @@ Incident note:
 
 Add a **Code** tool to the AI Agent and name it `extract_downtime_hours`.
 
+### Tool Parameter
+
+Add a **String** parameter named `query` and click the **+** so the AI can fill it.
+
 ### Tool Code (JavaScript)
 
 ```javascript
-const text = $json.incident_text || "";
+const text = $json.query || "";
 const match = text.match(/(\d+)\s*hours?/i);
 
 return [
   {
     json: {
-      downtime_hours: match ? Number(match[1]) : null,
+      // AI Agent tools must return a string in `response`
+      response: JSON.stringify({
+        downtime_hours: match ? Number(match[1]) : null,
+      }),
     },
   },
 ];

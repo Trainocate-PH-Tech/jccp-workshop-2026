@@ -78,10 +78,14 @@ Incident note:
 
 Add a **Code** tool to the AI Agent and name it `compute_impact_metrics`.
 
+### Tool Parameter
+
+Add a **String** parameter named `query` and click the **+** so the AI can fill it.
+
 ### Tool Code (JavaScript)
 
 ```javascript
-const text = $json.incident_text || "";
+const text = $json.query || "";
 
 const hoursMatch = text.match(/(\d+)\s*hours?/i);
 const downtimeHours = hoursMatch ? Number(hoursMatch[1]) : null;
@@ -96,9 +100,12 @@ const impactScore = (downtimeHours || 0) + equipmentTags.length * 2;
 return [
   {
     json: {
-      downtime_hours: downtimeHours,
-      equipment_tags: equipmentTags,
-      impact_score: impactScore,
+      // AI Agent tools must return a string in `response`
+      response: JSON.stringify({
+        downtime_hours: downtimeHours,
+        equipment_tags: equipmentTags,
+        impact_score: impactScore,
+      }),
     },
   },
 ];
