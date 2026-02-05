@@ -32,6 +32,17 @@ Incident:
 {{ $json.incident_text }}
 ```
 
+## Input File Contents (`sample_inputs/incident_note_01.txt`)
+
+Use this as the value for `incident_text` in your Set node or as the incoming payload.
+
+```
+A sudden pressure spike was observed in the hydroprocessing unit.
+The pressure transmitter PT-204 showed erratic readings before the unit tripped.
+Operators switched to manual control but response was delayed.
+No injuries occurred, but production was halted for approximately 6 hours.
+```
+
 ## Setup a Parser
 
 1. Add a **Set** Node

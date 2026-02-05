@@ -29,6 +29,46 @@ An engineering manager receives sensor data and alarm logs after a unit trip. Th
 * `control_mode_events.csv`
 * `sensor_metadata.json`
 
+## Input File Contents
+
+### `sensor_timeseries.csv`
+
+```
+timestamp,sensor_id,value,unit
+2026-02-02T14:28:00,PT-204,4.1,bar
+2026-02-02T14:29:00,PT-204,5.3,bar
+2026-02-02T14:30:00,PT-204,6.8,bar
+```
+
+### `sensor_alarm_log.csv`
+
+```
+timestamp,alarm_id,sensor_id,description,severity
+2026-02-02T14:30:15,ALM-PT-204,PT-204,Pressure High Warning,Medium
+2026-02-02T14:31:05,ALM-PT-204,PT-204,Pressure High High,Critical
+```
+
+### `control_mode_events.csv`
+
+```
+timestamp,event_type,details
+2026-02-02T14:32:10,MODE_CHANGE,AUTO -> MANUAL
+2026-02-02T14:35:20,UNIT_TRIP,Emergency shutdown triggered
+```
+
+### `sensor_metadata.json`
+
+```json
+{
+  "PT-204": {
+    "type": "Pressure Transmitter",
+    "location": "Hydroprocessing Unit A",
+    "range": "0-10 bar",
+    "criticality": "High"
+  }
+}
+```
+
 ## Create Edit Fields for the Data Files
 
 For each of the data files, create a **Set Node** and configure it for the following:

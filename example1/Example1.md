@@ -34,6 +34,15 @@ Operators switched to manual control but response was delayed.
 No injuries occurred, but production was halted for approximately 6 hours.
 ```
 
+### Input File Contents (`sample_inputs/incident_note_01.txt`)
+
+```
+A sudden pressure spike was observed in the hydroprocessing unit.
+The pressure transmitter PT-204 showed erratic readings before the unit tripped.
+Operators switched to manual control but response was delayed.
+No injuries occurred, but production was halted for approximately 6 hours.
+```
+
 ### Parse to HTML
 
 Add an HTML node (Generate HTML Template) with the following contents:

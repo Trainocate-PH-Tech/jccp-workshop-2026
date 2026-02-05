@@ -24,6 +24,15 @@ Use this file as the only input:
 
 - `sample_inputs/incident_note_01.txt`
 
+### Input File Contents (`sample_inputs/incident_note_01.txt`)
+
+```
+A sudden pressure spike was observed in the hydroprocessing unit.
+The pressure transmitter PT-204 showed erratic readings before the unit tripped.
+Operators switched to manual control but response was delayed.
+No injuries occurred, but production was halted for approximately 6 hours.
+```
+
 ## 1) Create a Set Node (single file input)
 
 Create a **Set** node with:
